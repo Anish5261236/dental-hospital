@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #12332e;
+  --ink-soft: #3b5952;
+  --porcelain: #fbf3ea;
+  --porcelain-2: #f3e7d8;
+  --coral: #e5646b;
+  --coral-dark: #c94a52;
+  --sage: #8fb3a0;
+  --sage-dark: #5f8a76;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-porcelain: var(--porcelain);
+  --color-porcelain-2: var(--porcelain-2);
+  --color-coral: var(--coral);
+  --color-coral-dark: var(--coral-dark);
+  --color-sage: var(--sage);
+  --color-sage-dark: var(--sage-dark);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background: var(--porcelain);
+  color: var(--ink);
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-fraunces), serif;
+}
+
+.font-mono-tag {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
